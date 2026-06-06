@@ -1,0 +1,2 @@
+[2026-04-29 14:52:31] User ->  Optimization Start Leg2 Requested JSON -> ImmutableMultiDict([('month', 'april'), ('year', '2026'), ('type', 'inter'), ('applicable', 'may'), ('username', 'admin@pds'), ('async', '0'), ('job_id', '57bc8ed1-3b70-43af-961c-d7e518d73975')])
+[2026-04-29 15:10:43] User ->  Optimization Start Leg2 Requested JSON -> ImmutableMultiDict([('month', 'april'), ('year', '2026'), ('type', 'inter'), ('applicable', 'may'), ('username', 'admin@pds'), ('async', '0'), ('job_id', 'f8e0aec8-1ee4-43ed-9c67-8708b622f6b9')])

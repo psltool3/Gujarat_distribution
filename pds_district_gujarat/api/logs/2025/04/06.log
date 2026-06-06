@@ -1,0 +1,19 @@
+[2025-04-06 23:15:27] District User -> Warehouse deleted -> Ahmedabad@pds| Requested JSON -> {"uid":"all"} | all
+[2025-04-06 23:15:43] District User -> Warehouse Added -> Ahmedabad@pds| dhe
+[2025-04-06 23:15:43] District User -> Warehouse Added -> Ahmedabad@pds| dhe
+[2025-04-06 23:15:43] District User -> Warehouse Added -> Ahmedabad@pds| dhe
+[2025-04-06 23:15:43] District User -> Warehouse Added -> Ahmedabad@pds| dhe
+[2025-04-06 23:15:43] District User -> Warehouse Added -> Ahmedabad@pds| dhe
+[2025-04-06 23:15:44] District User -> Warehouse Added -> Ahmedabad@pds| dhe
+[2025-04-06 23:16:32] District User -> Warehouse Edit -> Ahmedabad@pds| dhe
+[2025-04-06 23:16:32] District User -> Warehouse Edit -> Ahmedabad@pds| dhe
+[2025-04-06 23:16:32] District User -> Warehouse Edit -> Ahmedabad@pds| dhe
+[2025-04-06 23:16:32] District User -> Warehouse Edit -> Ahmedabad@pds| dhe
+[2025-04-06 23:16:32] District User -> Warehouse Edit -> Ahmedabad@pds| dhe
+[2025-04-06 23:16:32] District User -> Warehouse Edit -> Ahmedabad@pds| dhe
+[2025-04-06 23:16:42] District User -> All Normal FPS InActive -> Ahmedabad@pds
+[2025-04-06 23:16:44] District User -> All Normal FPS Active -> Ahmedabad@pds
+[2025-04-06 23:16:45] District User -> All Model FPS InActive -> Ahmedabad@pds
+[2025-04-06 23:16:47] District User -> All Model FPS Active -> Ahmedabad@pds
+[2025-04-06 23:18:52] District User -> FPS added ->Ahmedabad@pds| Requested JSON -> {"name":"Test_Data","type":"Model FPS","latitude":"9.89","longitude":"76.7661","district":"Ahmedabad","id":"123qqwwerrt","demand":"0","demand_rice":"500","demand_frice":"1234"}
+[2025-04-06 23:36:19] district User -> Save Data | approve district change yes ->Ahmedabad@pds| 225 - 17791 - Wheat

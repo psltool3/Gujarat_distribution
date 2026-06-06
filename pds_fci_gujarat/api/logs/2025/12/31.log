@@ -1,0 +1,23 @@
+[2025-12-31 15:58:32] User -> DCP added ->Ahmedabad@pds| Requested JSON -> {"name":"abcd","type":"afds","latitude":"24.010211","longitude":"91.994214","district":"Ahmedabad","id":"admin@pds","demand":"100","demand_rice":"100"}
+[2025-12-31 15:58:59] User -> DCP Edit ->Ahmedabad@pds| Requested JSON -> {"name":"aaa","uniqueid":"DCP_6954fad0c5e","active":"1","type":"afds","latitude":"24.010211","longitude":"91.994214","district":"Ahmedabad","id":"admin@pds","demand":"100","demand_rice":"100"}
+[2025-12-31 16:25:13] User -> DCP added ->Ahmedabad@pds| Requested JSON -> {"name":"abcd","type":"afds","latitude":"24.010211","longitude":"91.994214","demand_frice":"10","district":"Ahmedabad","id":"admin","demand":"100","demand_rice":"1000"}
+[2025-12-31 16:25:48] User -> DCP added ->Ahmedabad@pds| Requested JSON -> {"name":"abcd","type":"afds","latitude":"24.010211","longitude":"91.994214","demand_frice":"10","district":"Ahmedabad","id":"125","demand":"80.65","demand_rice":"100"}
+[2025-12-31 16:26:55] User -> DCP added ->Ahmedabad@pds| Requested JSON -> {"name":"abcd","type":"a","latitude":"23.982471","longitude":"91.853325","demand_frice":"10","district":"Ahmedabad","id":"admi","demand":"80.65","demand_rice":"1000"}
+[2025-12-31 16:28:48] User -> DCP deleted -> Ahmedabad@pds| Requested JSON -> {"uid":"DCP_6954fad0c5e"} | Aaa
+[2025-12-31 16:29:59] User -> DCP deleted -> Ahmedabad@pds| Requested JSON -> {"uid":"DCP_69550111365"} | abcd
+[2025-12-31 16:30:06] User -> DCP deleted -> Ahmedabad@pds| Requested JSON -> {"uid":"DCP_695501345f6"} | abcd
+[2025-12-31 16:30:14] User -> DCP deleted -> Ahmedabad@pds| Requested JSON -> {"uid":"DCP_69550177d4e"} | abcd
+[2025-12-31 16:30:33] User -> DCP added ->Ahmedabad@pds| Requested JSON -> {"name":"abcd","type":"afds","latitude":"23.982471","longitude":"91.994214","demand_frice":"10","district":"Ahmedabad","id":"admin@pds","demand":"80.65","demand_rice":"1000"}
+[2025-12-31 16:37:20] User -> DCP added ->Ahmedabad@pds| Requested JSON -> {"name":"abcd","type":"afds","latitude":"24.010211","longitude":"91.994214","demand_frice":"10","district":"Ahmedabad","id":"admin","demand":"100","demand_rice":"100"}
+[2025-12-31 16:37:32] User -> DCP deleted -> Ahmedabad@pds| Requested JSON -> {"uid":"DCP_69550251c15"} | abcd
+[2025-12-31 16:40:23] User -> DCP Edit ->Ahmedabad@pds| Requested JSON -> {"name":"abcd","uniqueid":"DCP_695503e8f0b","active":"1","type":"afds","latitude":"24.010211","longitude":"91.994214","demand_frice":"1000","district":"Ahmedabad","id":"admin","demand":"100","demand_rice":"100"}
+[2025-12-31 16:40:52] User -> DCP InActive -> Ahmedabad@pds| Ahmedabad
+[2025-12-31 16:40:55] User -> DCP Active -> Ahmedabad@pds| Abcd
+[2025-12-31 16:59:35] User -> DCP Added -> Ahmedabad@pds| Abcd
+[2025-12-31 17:11:23] User -> DCP Edit -> Ahmedabad@pds| Abcd
+[2025-12-31 17:11:23] User -> DCP Edit -> Ahmedabad@pds| Abcd
+[2025-12-31 17:58:04] User -> DCP Edit ->Ahmedabad@pds| Requested JSON -> {"name":"Abcd","uniqueid":"DCP_695503e8f0b","active":"1","type":"afds","latitude":"24.010211","longitude":"91.994214","demand_frice":"100","district":"Ahmedabad","id":"admin","demand":"100","demand_rice":"100"}
+[2025-12-31 17:58:31] User -> DCP Edit ->Ahmedabad@pds| Requested JSON -> {"name":"Abcd","uniqueid":"DCP_6955091f23e","active":"1","type":"afds","latitude":"24.010211","longitude":"91.994214","demand_frice":"2","district":"Ahmedabad","id":"admdin","demand":"100","demand_rice":"100"}
+[2025-12-31 18:46:59] User -> DCP Edit ->Ahmedabad@pds| Requested JSON -> {"name":"Abcd","uniqueid":"DCP_695503e8f0b","active":"1","type":"afds","latitude":"24.010211","longitude":"91.994214","demand_frice":"100","district":"Ahmedabad","id":"admin","demand":"100","demand_rice":"55"}
+[2025-12-31 18:49:34] User -> DCP Edit ->Ahmedabad@pds| Requested JSON -> {"name":"Abcd","uniqueid":"DCP_695503e8f0b","active":"1","type":"afds","latitude":"24.010211","longitude":"91.994214","demand_frice":"55","district":"Ahmedabad","id":"admin","demand":"1000","demand_rice":"55"}
+[2025-12-31 23:14:44] User -> DCP added ->admin@pds| Requested JSON -> {"name":"abc","type":"abc","latitude":"12.234","longitude":"45.345","demand_frice":"100","district":"Ahmedabad","id":"admin@pds","demand":"456","demand_rice":"099"}

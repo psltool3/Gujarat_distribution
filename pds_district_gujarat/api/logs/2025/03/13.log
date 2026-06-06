@@ -1,0 +1,43 @@
+[2025-03-13 11:04:05] District_User -> Warehouse added ->AhmedabadCity@pds| Requested JSON -> {"name":"Demo","type":"motorable","latitude":"24.3253","storage":"1000","district":"Ahmedabadcity","id":"51263","warehousetype":"swc","longitude":"76.4765"}
+[2025-03-13 11:07:15] District User -> Warehouse InActive -> AhmedabadCity@pds| dhe
+[2025-03-13 11:07:19] District User -> Warehouse Active -> AhmedabadCity@pds| dhe
+[2025-03-13 11:09:08] District User -> Warehouse Edit->AhmedabadCity@pds| Requested JSON -> {"name":"Demonnn","uniqueid":"WH_67d26e4dc8e1","active":"1","type":"motorable","latitude":"24.3253","storage":"1000","district":"Ahmedabadcity","id":"51263","warehousetype":"swc","longitude":"76.4765"}
+[2025-03-13 11:13:12] District User -> Warehouse deleted -> AhmedabadCity@pds| Requested JSON -> {"uid":"WH_67d26e4dc8e1"} | Demonnn
+[2025-03-13 11:19:40] District User -> Warehouse deleted -> AhmedabadCity@pds| Requested JSON -> {"uid":"all"} | all
+[2025-03-13 11:20:09] District User -> Warehouse Added -> AhmedabadCity@pds| dhe
+[2025-03-13 11:20:09] District User -> Warehouse Added -> AhmedabadCity@pds| dhe
+[2025-03-13 11:20:09] District User -> Warehouse Added -> AhmedabadCity@pds| dhe
+[2025-03-13 11:20:09] District User -> Warehouse Added -> AhmedabadCity@pds| dhe
+[2025-03-13 11:24:45] District User -> Warehouse Edit -> AhmedabadCity@pds| dhe
+[2025-03-13 11:24:45] District User -> Warehouse Edit -> AhmedabadCity@pds| dhe
+[2025-03-13 11:24:45] District User -> Warehouse Edit -> AhmedabadCity@pds| dhe
+[2025-03-13 11:24:45] District User -> Warehouse Edit -> AhmedabadCity@pds| dhe
+[2025-03-13 11:27:18] District User -> FPS added ->AhmedabadCity@pds| Requested JSON -> {"name":"Demo","type":"Model FPS","latitude":"24.3253","longitude":"76.4765","district":"Ahmedabadcity","id":"54268","demand":"200","demand_rice":"100","demand_frice":"100"}
+[2025-03-13 11:29:59] District User -> FPS InActive -> AhmedabadCity@pds| Demo
+[2025-03-13 11:31:33] District User -> FPS Active -> AhmedabadCity@pds| Demo
+[2025-03-13 11:32:02] District User -> FPS Edit->AhmedabadCity@pds| Requested JSON -> {"name":"Demonn","uniqueid":"FPS_67d273becb6","active":"1","type":"Model FPS","latitude":"24.3253","longitude":"76.4765","district":"Ahmedabadcity","id":"54268","demand":"0","demand_rice":"0","demand_frice":"00"}
+[2025-03-13 11:35:13] district_user -> FPS deleted -> AhmedabadCity@pds| Requested JSON -> {"uid":"FPS_67d273becb6"} | Demonn
+[2025-03-13 11:39:36] district_user -> FPS deleted -> AhmedabadCity@pds| Requested JSON -> {"uid":"all"} | all
+[2025-03-13 11:41:11] District User -> FPS Added -> AhmedabadCity@pds| abc
+[2025-03-13 11:41:11] District User -> FPS Added -> AhmedabadCity@pds| abc
+[2025-03-13 11:41:11] District User -> FPS Added -> AhmedabadCity@pds| abc
+[2025-03-13 11:41:11] District User -> FPS Added -> AhmedabadCity@pds| abc
+[2025-03-13 11:41:11] District User -> FPS Added -> AhmedabadCity@pds| abc
+[2025-03-13 11:41:11] District User -> FPS Added -> AhmedabadCity@pds| abc
+[2025-03-13 11:41:11] District User -> FPS Added -> AhmedabadCity@pds| abc
+[2025-03-13 11:41:11] District User -> FPS Added -> AhmedabadCity@pds| abc
+[2025-03-13 11:43:47] District User -> FPS Edit -> AhmedabadCity@pds| abc
+[2025-03-13 11:43:47] District User -> FPS Edit -> AhmedabadCity@pds| abc
+[2025-03-13 11:43:47] District User -> FPS Edit -> AhmedabadCity@pds| abc
+[2025-03-13 11:43:47] District User -> FPS Edit -> AhmedabadCity@pds| abc
+[2025-03-13 11:43:47] District User -> FPS Edit -> AhmedabadCity@pds| abc
+[2025-03-13 11:43:47] District User -> FPS Edit -> AhmedabadCity@pds| abc
+[2025-03-13 11:43:47] District User -> FPS Edit -> AhmedabadCity@pds| abc
+[2025-03-13 11:43:47] District User -> FPS Edit -> AhmedabadCity@pds| abc
+[2025-03-13 11:46:15] District User -> All Normal FPS InActive -> AhmedabadCity@pds
+[2025-03-13 11:46:23] District User -> All Normal FPS Active -> AhmedabadCity@pds
+[2025-03-13 11:48:05] District User -> FPS Edit->AhmedabadCity@pds| Requested JSON -> {"name":"abc","uniqueid":"FPS_67d276ff02d","active":"1","type":"Model FPS","latitude":"23.0589734","longitude":"72.5984152","district":"Ahmedabadcity","id":"15091","demand":"25.56","demand_rice":"38.34","demand_frice":"2.079"}
+[2025-03-13 11:48:07] District User -> All Model FPS InActive -> AhmedabadCity@pds
+[2025-03-13 11:48:21] District User -> FPS Edit->AhmedabadCity@pds| Requested JSON -> {"name":"Abc","uniqueid":"FPS_67d276ff02d","active":"0","type":"Normal FPS","latitude":"23.0589734","longitude":"72.5984152","district":"Ahmedabadcity","id":"15091","demand":"25.56","demand_rice":"38.34","demand_frice":"2.079"}
+[2025-03-13 11:48:23] District User -> All Normal FPS Active -> AhmedabadCity@pds
+[2025-03-13 11:52:07] User -> Read Message ->AhmedabadCity@pds| Requested JSON -> hi kese ho?? | AhmedabadCity@pds

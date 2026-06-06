@@ -1,0 +1,1 @@
+[2026-06-04 23:50:26] User ->  Optimization Start for leg2 Requested JSON -> ImmutableMultiDict([('month', 'june'), ('year', '2026'), ('type', 'intra'), ('applicable', 'may'), ('username', 'admin@pds'), ('async', '0')])

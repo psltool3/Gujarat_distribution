@@ -1,0 +1,12 @@
+[2025-03-13 10:48:28] User -> Cost for leg2 Added ->admin@pds| Requested JSON -> {"cost_aa3ZA599aU8ghi":"100"} | 2025 | march
+[2025-03-13 10:48:31] {"id":"aa3ZA599aU8ghi"}
+[2025-03-13 10:48:31] User -> Cost for leg2 Reset ->admin@pds| Requested JSON -> {"id":"aa3ZA599aU8ghi"} | 
+[2025-03-13 10:48:35] User -> Cost for leg2 Added ->admin@pds| Requested JSON -> {"cost_aa3ZA599aU8ghi":"200"} | 2025 | march
+[2025-03-13 10:50:52] User -> Cost for leg2 Added ->admin@pds| Requested JSON -> {"cost_qYqgeR5ZRzh06a":"00","cost_B8dbXRwsHISjfQ":"","cost_LQIIw4jp4jFgV5":"0"} | 2024 | june
+[2025-03-13 10:50:57] User -> Cost for leg2 Added ->admin@pds| Requested JSON -> {"cost_B8dbXRwsHISjfQ":"","cost_LQIIw4jp4jFgV5":"100"} | 2025 | march
+[2025-03-13 10:51:00] User -> Cost for leg1 Reset ->admin@pds| Requested JSON -> {"id":"LQIIw4jp4jFgV5"} | 
+[2025-03-13 10:51:23] User -> Cost for leg2 Added ->admin@pds| Requested JSON -> {"cost_B8dbXRwsHISjfQ":"","cost_LQIIw4jp4jFgV5":"100"} | 2025 | march
+[2025-03-13 10:51:28] User -> Cost for leg1 Reset ->admin@pds| Requested JSON -> {"id":"LQIIw4jp4jFgV5"} | 
+[2025-03-13 10:51:59] User -> Cost for leg1 Added ->admin@pds| Requested JSON -> {"cost_B8dbXRwsHISjfQ":"","cost_LQIIw4jp4jFgV5":"100"} | 2025 | march
+[2025-03-13 10:52:05] User -> Cost for leg1 Reset ->admin@pds| Requested JSON -> {"id":"LQIIw4jp4jFgV5"} | 
+[2025-03-13 11:51:35] User -> Send  Message ->admin@pds| Requested JSON -> {"message":"hi kese ho??","uniqueid":"6640596a15051"} | AhmedabadCity@pds

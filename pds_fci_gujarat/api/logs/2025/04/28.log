@@ -1,0 +1,7 @@
+[2025-04-28 10:08:30] User -> Delete User ->admin@pds| Requested JSON -> {"uid":"6809d284b4ad2"} | saurabh
+[2025-04-28 10:09:01] User -> User Add ->admin@pds| Requested JSON -> {"newusername":"Ahmedabad@pds","district":"Ahmedabad","newpassword":"Ahmedabad"} | Ahmedabad@pds
+[2025-04-28 10:09:36] User -> User Add ->admin@pds| Requested JSON -> {"newusername":"Ahmedabadcity@pds","district":"Ahmedabadcity","newpassword":"Ahmedabadcity"} | Ahmedabadcity@pds
+[2025-04-28 10:10:11] User -> User Add ->admin@pds| Requested JSON -> {"newusername":"Amreli@pds","district":"Amreli","newpassword":"Amreli"} | Amreli@pds
+[2025-04-28 10:11:10] User -> User Add ->admin@pds| Requested JSON -> {"newusername":"Anand@pds","district":"Anand","newpassword":"Anand"} | Anand@pds
+[2025-04-28 10:11:47] User -> User Add ->admin@pds| Requested JSON -> {"newusername":"Arvalli@pds","district":"Arvalli","newpassword":"Arvalli"} | Arvalli@pds
+[2025-04-28 10:18:03] User -> User Add ->admin@pds| Requested JSON -> {"newusername":"Banaskantha@pds","district":"Banaskantha","newpassword":"Banaskantha"} | Banaskantha@pds

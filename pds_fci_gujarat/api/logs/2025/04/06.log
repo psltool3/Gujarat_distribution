@@ -1,0 +1,3 @@
+[2025-04-06 23:12:00] User -> Cost for leg2 Added ->admin@pds| Requested JSON -> {"cost_LAjQLNkvZEwZQu":"100"} | 2025 | april
+[2025-04-06 23:12:01] {"id":"LAjQLNkvZEwZQu"}
+[2025-04-06 23:12:01] User -> Cost for leg2 Reset ->admin@pds| Requested JSON -> {"id":"LAjQLNkvZEwZQu"} | 
