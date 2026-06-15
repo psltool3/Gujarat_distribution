@@ -203,39 +203,31 @@ if(password_verify($person->getPassword(), $dbHashedPassword)){
 						}
 					}
 					else{
-                        $column[0] = preg_replace('/^\xEF\xBB\xBF/', '', $column[0]);
 						for($j=0;$j<count($column);$j++){
-							switch($column[$j]){
-								case $reverseMapData["district"]:
-									$district = $j;
-									break;
-								case $reverseMapData["latitude"]:
-									$latitude = $j;
-									break;
-								case $reverseMapData["longitude"]:
-									$longitude = $j;
-									break;
-								case $reverseMapData["name"]:
-									$name = $j;
-									break;
-								case $reverseMapData["id"]:
-									$id = $j;
-									break;
-								case $reverseMapData["type"]:
-									$type = $j;
-									break;
-								case $reverseMapData["demand"]:
-									$demand = $j;
-									break;
-								case $reverseMapData["demand_rice"]:
-									$demand_rice = $j;
-									break;
-								case $reverseMapData["demand_frice"]:
-									$demand_frice = $j;
-									break;
-								case $reverseMapData["active"]:
-									$active = $j;
-									break;
+							$header = strtolower(trim((string)$column[$j]));
+							$header = preg_replace('/^\xEF\xBB\xBF/', '', $header);
+							$header = str_replace(array("\r", "\n", '"', "'"), '', $header);
+							
+							if (strpos($header, 'district') !== false) {
+								$district = $j;
+							} else if ($header === 'latitude') {
+								$latitude = $j;
+							} else if ($header === 'longitude') {
+								$longitude = $j;
+							} else if (strpos($header, 'name') !== false) {
+								$name = $j;
+							} else if (strpos($header, 'fps id') !== false || $header === 'id') {
+								$id = $j;
+							} else if (strpos($header, 'model') !== false || strpos($header, 'smart') !== false || $header === 'type') {
+								$type = $j;
+							} else if (strpos($header, 'wheat') !== false || $header === 'demand') {
+								$demand = $j;
+							} else if (strpos($header, 'rice') !== false && strpos($header, 'frice') === false) {
+								$demand_rice = $j;
+							} else if (strpos($header, 'frice') !== false) {
+								$demand_frice = $j;
+							} else if (strpos($header, 'active') !== false || strpos($header, 'status') !== false) {
+								$active = $j;
 							}
 						}
 					}
@@ -262,16 +254,16 @@ if(password_verify($person->getPassword(), $dbHashedPassword)){
 				
 				$file = fopen($fileName, "r");
 				$i = 0;
-				$district = 0;
-				$name = 1;
-				$id = 2;
-				$type = 3;
-				$demand = 6;
-				$demand_rice = 8;
-				$demand_frice = 9;
-				$longitude = 5;
-				$latitude = 4;
-				$active = 10;
+				$district = -1;
+				$name = -1;
+				$id = -1;
+				$type = -1;
+				$demand = -1;
+				$demand_rice = -1;
+				$demand_frice = -1;
+				$longitude = -1;
+				$latitude = -1;
+				$active = -1;
 				while (($column = fgetcsv($file, 10000, ",")) !== FALSE) {
 					if($i>0){
 						$FPS = new FPS;
@@ -314,39 +306,31 @@ if(password_verify($person->getPassword(), $dbHashedPassword)){
 						mysqli_query($con, $query_update);
 					}
 					else{
-                        $column[0] = preg_replace('/^\xEF\xBB\xBF/', '', $column[0]);
 						for($j=0;$j<count($column);$j++){
-							switch($column[$j]){
-								case $reverseMapData["district"]:
-									$district = $j;
-									break;
-								case $reverseMapData["latitude"]:
-									$latitude = $j;
-									break;
-								case $reverseMapData["longitude"]:
-									$longitude = $j;
-									break;
-								case $reverseMapData["name"]:
-									$name = $j;
-									break;
-								case $reverseMapData["id"]:
-									$id = $j;
-									break;
-								case $reverseMapData["type"]:
-									$type = $j;
-									break;
-								case $reverseMapData["demand"]:
-									$demand = $j;
-									break;
-								case $reverseMapData["demand_rice"]:
-									$demand_rice = $j;
-									break;
-								case $reverseMapData["demand_frice"]:
-									$demand_frice = $j;
-									break;
-								case $reverseMapData["active"]:
-									$active = $j;
-									break;
+							$header = strtolower(trim((string)$column[$j]));
+							$header = preg_replace('/^\xEF\xBB\xBF/', '', $header);
+							$header = str_replace(array("\r", "\n", '"', "'"), '', $header);
+							
+							if (strpos($header, 'district') !== false) {
+								$district = $j;
+							} else if ($header === 'latitude') {
+								$latitude = $j;
+							} else if ($header === 'longitude') {
+								$longitude = $j;
+							} else if (strpos($header, 'name') !== false) {
+								$name = $j;
+							} else if (strpos($header, 'fps id') !== false || $header === 'id') {
+								$id = $j;
+							} else if (strpos($header, 'model') !== false || strpos($header, 'smart') !== false || $header === 'type') {
+								$type = $j;
+							} else if (strpos($header, 'wheat') !== false || $header === 'demand') {
+								$demand = $j;
+							} else if (strpos($header, 'rice') !== false && strpos($header, 'frice') === false) {
+								$demand_rice = $j;
+							} else if (strpos($header, 'frice') !== false) {
+								$demand_frice = $j;
+							} else if (strpos($header, 'active') !== false || strpos($header, 'status') !== false) {
+								$active = $j;
 							}
 						}
 					}

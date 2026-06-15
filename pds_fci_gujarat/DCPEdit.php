@@ -149,7 +149,7 @@ else{
                                                 <div class="col-md-9">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="fa fa-info"></span></span>
-                                                        <input type="text" class="form-control" id="demand_frice" name="demand_frice" value="<?php echo $demand_rice ?>" required />
+                                                        <input type="text" class="form-control" id="demand_frice" name="demand_frice" value="<?php echo $demand_frice ?>" required />
                                                     </div>
                                                     <span class="help-block">Procurement in Quintals</span>
                                                 </div>
