@@ -19,11 +19,9 @@ while($row = mysqli_fetch_array($result))
 }
 
 $tablename = "optimiseddata_".$id;
-echo $tablename;
-echo "</br>";
+
 foreach ($_POST as $key => $value) {
-	echo $value;
-	echo "</br>";
+
 	if (substr($key, -8) === '_approve'){
 		$parts = explode("_", $key,3);
 		$fromid = $parts[0];
