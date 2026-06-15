@@ -1019,11 +1019,6 @@ require('util/Logger.php');
     let pollInterval = null;
 
     function generateoptimizedplan() {
-        const formData = new FormData();
-        formData.append('month', document.getElementById("month").value);
-        formData.append('year', document.getElementById("year").value);
-        formData.append('type', document.getElementById("type").value);
-        
         var checkboxes = document.querySelectorAll('#checkboxes input[type="checkbox"]');
         var selectedValues = [];
 
@@ -1032,6 +1027,17 @@ require('util/Logger.php');
             selectedValues.push(checkbox.value);
           }
         });
+        
+        if (selectedValues.length === 0) {
+            alert("Application month no selected");
+            resetUI();
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('month', document.getElementById("month").value);
+        formData.append('year', document.getElementById("year").value);
+        formData.append('type', document.getElementById("type").value);
         
         controller = new AbortController();
         const signal = controller.signal;

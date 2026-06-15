@@ -882,15 +882,13 @@ require('util/Logger.php');
 				try{
 					if(firstStart==0){
 						var resultarray = JSON.parse(result);
-						var monthsString = resultarray[0]["applicable"];
+						var monthsString = document.getElementById("month").value;
 						var monthsArray = monthsString.split(',');
 						applicableLength = monthsArray.length;
 						var dropdownMultiple = document.querySelectorAll('#checkboxes input[type="checkbox"]');
-						for (const fillMonth of monthsArray) {
-							dropdownMultiple.forEach(function(checkbox) {
-							  checkbox.checked = false;
-							});
-						}
+						dropdownMultiple.forEach(function(checkbox) {
+							checkbox.checked = false;
+						});
 						for (const fillMonth of monthsArray) {
 							dropdownMultiple.forEach(function(checkbox) {
 							  if (checkbox.value===fillMonth) {
@@ -1000,11 +998,6 @@ require('util/Logger.php');
     let pollInterval = null;
 
     function generateoptimizedplan() {
-        const formData = new FormData();
-        formData.append('month', document.getElementById("month").value);
-        formData.append('year', document.getElementById("year").value);
-        formData.append('type', document.getElementById("type").value);
-        
         var checkboxes = document.querySelectorAll('#checkboxes input[type="checkbox"]');
         var selectedValues = [];
 
@@ -1013,6 +1006,17 @@ require('util/Logger.php');
             selectedValues.push(checkbox.value);
           }
         });
+        
+        if (selectedValues.length === 0) {
+            alert("Application month no selected");
+            resetUI();
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('month', document.getElementById("month").value);
+        formData.append('year', document.getElementById("year").value);
+        formData.append('type', document.getElementById("type").value);
         
         controller = new AbortController();
         const signal = controller.signal;
@@ -1468,6 +1472,12 @@ for (var i = 0; i < dropdown.options.length; i++) {
 for (var j = removeIndices.length - 1; j >= 0; j--) {
     dropdown.remove(removeIndices[j]);
 }
+
+// Default the checked checkbox for "Applicable Month" to the current month
+var checkboxes = document.querySelectorAll('#checkboxes input[type="checkbox"]');
+checkboxes.forEach(function(checkbox) {
+    checkbox.checked = (checkbox.value === currentMonthValue);
+});
 
 var dropdown = document.getElementById('year');
 for (var i = 0; i < dropdown.options.length; i++) {
