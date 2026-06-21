@@ -77,6 +77,8 @@ if (isset($_GET['format'])) {
 				$row["from_name"] = $row['new_name_district'];
 				$row["distance"] = $row['new_distance_district'];
 			}
+			// Cast distance to float so it is stored as a number in Excel
+			$row["distance"] = ($row["distance"] !== null && $row["distance"] !== "") ? (float)$row["distance"] : 0;
             $temp = array();
             $temp_pdf = array();
             for($i=0;$i<count($columns);$i++){
@@ -96,8 +98,10 @@ if (isset($_GET['format'])) {
     // Set headers for the chosen format
     switch ($format) {
         case 'csv':
-            header('Content-Type: text/csv');
+            header('Content-Type: text/csv; charset=UTF-8');
             header('Content-Disposition: attachment; filename="' . $filename . '.csv"');
+            // Output UTF-8 BOM so Excel displays Gujarati/Unicode names correctly
+            echo "\xEF\xBB\xBF";
             outputCSV($tableData);
             break;
 
@@ -114,11 +118,18 @@ if (isset($_GET['format'])) {
             }*/
 
             // Insert data tableData
+            // Find the index of 'distance' column for numeric casting
+            $distanceColIndex = array_search('distance', $columns) + 1; // 1-based
             $rowIndex = 1;
             foreach ($tableData as $rowData) {
                 $columnIndex = 1;
                 foreach ($rowData as $value) {
-                    $sheet->setCellValueByColumnAndRow($columnIndex, $rowIndex, $value);
+                    // Ensure distance column is set as numeric, not string
+                    if ($rowIndex > 1 && $columnIndex === $distanceColIndex && is_numeric($value)) {
+                        $sheet->setCellValueByColumnAndRow($columnIndex, $rowIndex, (float)$value);
+                    } else {
+                        $sheet->setCellValueByColumnAndRow($columnIndex, $rowIndex, $value);
+                    }
                     $columnIndex++;
                 }
                 $rowIndex++;
