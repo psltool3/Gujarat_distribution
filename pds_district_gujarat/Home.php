@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require('util/Connection.php');
 require('util/SessionCheck.php');
 require('Header.php');
@@ -276,11 +276,14 @@ if($currentTimestamp >= $targetTimestamp) {
 												<th style="font-size:16px">Commodity</th>
 												<th style="font-size:16px">Quantity(Qtl)</th>
 												<th style="font-size:16px">Distance(Km)</th>
+												<th style="font-size:16px">Prev_tagging</th>
+												<th style="font-size:16px">difference</th>
 												<th style="font-size:16px">District Reviewed</th>
 												<th style="font-size:16px">District Suggested Warehouse</th>
 												<th style="font-size:16px">District Reason for not Approve</th>
 												<th style="font-size:16px">District Suggested Warehouse Distance</th>
 												<th style="font-size:16px">Admin Approved</th>										
+												<th style="font-size:16px">Action</th>
                                             </tr>
                                         </thead>
 										<tbody id="table_body">
@@ -703,8 +706,10 @@ if($currentTimestamp >= $targetTimestamp) {
 									var distance_district = obj[datafield]["new_distance_district"] !== null ? obj[datafield]["new_distance_district"] : "";
 									var district_change_approve = obj[datafield]["district_change_approve"] !== null ? obj[datafield]["district_change_approve"] : "";
 									
+									var tagging = obj[datafield]["tagging"] !== null && obj[datafield]["tagging"] !== undefined ? obj[datafield]["tagging"] : "";
+									var comparison = obj[datafield]["comparison"] !== null && obj[datafield]["comparison"] !== undefined ? obj[datafield]["comparison"] : "";
 									
-									var subpart1 = "<tr><td>" +  obj[datafield]["scenario"] +  "</td><td>"  + obj[datafield]["from"] +  "</td><td>"  + obj[datafield]["from_state"] +  "</td><td>"  + obj[datafield]["from_id"] +  "</td><td>"  + obj[datafield]["from_name"] +  "</td><td>"  + obj[datafield]["from_district"] +  "</td><td>"  + obj[datafield]["from_lat"] +  "</td><td>"  + obj[datafield]["from_long"] +  "</td><td>"  + obj[datafield]["to"] +  "</td><td>"  + obj[datafield]["to_state"] +  "</td><td>"  + obj[datafield]["to_id"] +  "</td><td>"  + obj[datafield]["to_name"] +  "</td><td>"  + obj[datafield]["to_district"] +  "</td><td>"  + obj[datafield]["to_lat"] +  "</td><td>"  + obj[datafield]["to_long"] +  "</td><td>"  + obj[datafield]["commodity"] +  "</td><td>"  + obj[datafield]["quantity"] +  "</td><td>"  + obj[datafield]["distance"] + "</td>";
+									var subpart1 = "<tr><td>" +  obj[datafield]["scenario"] +  "</td><td>"  + obj[datafield]["from"] +  "</td><td>"  + obj[datafield]["from_state"] +  "</td><td>"  + obj[datafield]["from_id"] +  "</td><td>"  + obj[datafield]["from_name"] +  "</td><td>"  + obj[datafield]["from_district"] +  "</td><td>"  + obj[datafield]["from_lat"] +  "</td><td>"  + obj[datafield]["from_long"] +  "</td><td>"  + obj[datafield]["to"] +  "</td><td>"  + obj[datafield]["to_state"] +  "</td><td>"  + obj[datafield]["to_id"] +  "</td><td>"  + obj[datafield]["to_name"] +  "</td><td>"  + obj[datafield]["to_district"] +  "</td><td>"  + obj[datafield]["to_lat"] +  "</td><td>"  + obj[datafield]["to_long"] +  "</td><td>"  + obj[datafield]["commodity"] +  "</td><td>"  + obj[datafield]["quantity"] +  "</td><td>"  + obj[datafield]["distance"] + "</td><td>" + tagging + "</td><td>" + comparison + "</td>";
 									
 									if(obj[datafield]["new_id"]==null){
 										obj[datafield]["new_id"] = "";
@@ -735,7 +740,7 @@ if($currentTimestamp >= $targetTimestamp) {
 									}
 									
 									if(distance_district==null || distance_district==""){
-										var newdistance = "<td><input type='text' onchange='handleDistanceChange(\"" + uniqueid_iddistance + "\")' id='" + uniqueid_iddistance + "' name='" + uniqueid_iddistance + "' disabled required /></td>";
+										var newdistance = "<td><input type='number' step='any' onchange='handleDistanceChange(\"" + uniqueid_iddistance + "\")' id='" + uniqueid_iddistance + "' name='" + uniqueid_iddistance + "' disabled required /></td>";
 									}
 									else{
 										var newdistance = "<td>" + distance_district + "</td>"
@@ -748,7 +753,8 @@ if($currentTimestamp >= $targetTimestamp) {
 										var district_reason = "<td><select class='form-control' onchange='handleReasonChange(\"" + uniqueid_idreason + "\")' id='" + uniqueid_idreason + "' name='" + uniqueid_idreason + "' disabled><option value=''>Select</option><option value='Road not accessible'>Road not accessible</option><option value='Road repair going on'>Road repair going on</option><option value='Pertaining to Distance'>Pertaining to Distance</option></select></td>";
 									}
 									
-									$('#table_body').append(subpart1 + warehouse_id_part + district_reason + newdistance  + admin_approve + "</tr>");
+									var action_btn = "<td><button class='btn btn-warning' onclick='resetRow(\"" + uniqueid + "\")'>Reset</button></td>";
+									$('#table_body').append(subpart1 + warehouse_id_part + district_reason + newdistance  + admin_approve + action_btn + "</tr>");
 								}
 							}
 							//fetchCardDataFromServer();							
@@ -797,6 +803,28 @@ if($currentTimestamp >= $targetTimestamp) {
 			return format.replace(/%(\d+)/g, function(match, index) {
 				return typeof args[index] !== 'undefined' ? args[index] : match;
 			});
+		}
+		
+		function resetRow(uniqueid) {
+			if(confirm("Are you sure you want to reset this row's tagging?")) {
+				$.ajax({
+					type: "POST",
+					url: "api/ResetRowDistrict.php",
+					data: { uniqueid: uniqueid },
+					success: function(result) {
+						var res = JSON.parse(result);
+						if(res.status == 'success') {
+							alert("Row reset successfully");
+							fetchDataFromServerId();
+						} else {
+							alert("Error: " + res.message);
+						}
+					},
+					error: function() {
+						alert("Error resetting row.");
+					}
+				});
+			}
 		}
     </script>
     </body>

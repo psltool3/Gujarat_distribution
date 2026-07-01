@@ -442,7 +442,7 @@ require('util/Logger.php');
 								<!-- <option value='2024' style="font-weight:bold;color:#000;">2024</option> -->
 							</select>
 							</div>
-							<span class="help-block">Selected Year</span>
+							<span class="help-block">Applicable Year</span>
 						</div>
 					</div>
 				</div>

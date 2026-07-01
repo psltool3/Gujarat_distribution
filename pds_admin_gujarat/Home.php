@@ -441,7 +441,7 @@ require('util/Logger.php');
 								<!-- <option value='2024' style="font-weight:bold;color:#000;">2024</option> -->
 							</select>
 							</div>
-							<span class="help-block">Selected Year</span>
+							<span class="help-block">Applicable Year</span>
 						</div>
 					</div>
 				</div>
@@ -683,12 +683,7 @@ require('util/Logger.php');
 							<!-- Table body content -->
 						</tbody>
 					</table>
-					
-					<center>
-						<button id="pushToApiButton" class="btn btn-primary" style="display: none; margin-top: 20px; font-size: 18px; padding: 10px 24px; font-weight: bold; border-radius: 25px; background-color: #5E35B1; border: none; color: white;" onclick="pushDataToApi()">
-							Push Data for <span id="pushMonthText"></span>
-						</button>
-					</center>
+
 					
 				
 				
@@ -1113,8 +1108,12 @@ require('util/Logger.php');
             'sept': 'September', 'oct': 'October', 'nov': 'November', 'dec': 'December'
         };
         var monthNameText = monthNames[monthVal] || capitalizeFirstLetter(monthVal);
-        document.getElementById("pushMonthText").innerText = monthNameText;
-        document.getElementById("pushToApiButton").style.display = "inline-block";
+        if (document.getElementById("pushMonthText")) {
+            document.getElementById("pushMonthText").innerText = monthNameText;
+        }
+        if (document.getElementById("pushToApiButton")) {
+            document.getElementById("pushToApiButton").style.display = "inline-block";
+        }
         
         var thead = document.createElement("thead");
         var headerRow = document.createElement("tr");

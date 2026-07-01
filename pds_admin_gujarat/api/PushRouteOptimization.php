@@ -44,6 +44,17 @@ if (!$checkTableResult || mysqli_num_rows($checkTableResult) === 0) {
     exit;
 }
 
+// 2.5 Check if all tags have been approved by the State Admin
+$unapprovedQuery = "SELECT COUNT(*) as cnt FROM `$tablename` WHERE approve_admin IS NULL OR approve_admin = ''";
+$unapprovedResult = mysqli_query($con, $unapprovedQuery);
+if ($unapprovedResult) {
+    $unapprovedRow = mysqli_fetch_assoc($unapprovedResult);
+    if ($unapprovedRow['cnt'] > 0) {
+        echo json_encode(["status" => "error", "message" => "All tags must be approved by the State Admin before pushing to SCM. (" . $unapprovedRow['cnt'] . " rows pending)"]);
+        exit;
+    }
+}
+
 // 3. Query all route movement rows from the detail table
 $dataQuery = "SELECT * FROM `$tablename`";
 $dataResult = mysqli_query($con, $dataQuery);

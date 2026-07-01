@@ -14,7 +14,7 @@ if (isset($_GET['format'])) {
     $format = $_GET['format'];
     $district = $_SESSION['district_district'];
     #$columns = ["from_district","from_id","from_name","to_district","to_id","to_name"];
-	$columns = ["scenario","from","from_state","from_id","from_name","from_district","from_lat","from_long","to","to_state","to_id","to_name","to_district","to_lat","to_long","commodity","quantity","distance"];
+	$columns = ["scenario","from","from_state","from_id","from_name","from_district","from_lat","from_long","to","to_state","to_id","to_name","to_district","to_lat","to_long","commodity","quantity","distance","tagging","comparison"];
 	$columns_pdf = ["scenario","from","from_id","from_name","from_district","from_lat","from_long","to","to_id","to_name","to_district","to_lat","to_long","commodity","quantity","distance"];
 
 	

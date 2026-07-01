@@ -297,6 +297,7 @@ while($row = mysqli_fetch_array($result))
 										<th style="font-size:16px">Reason for not Approve</th>
 										<th style="font-size:16px">Suggest Warehouse</th>
 										<th style="font-size:16px">Suggested Warehouse Distance</th>
+										<th style="font-size:16px">Action</th>
 									</tr>
                                  </thead>
 								<tbody id="table_body">
@@ -796,7 +797,7 @@ while($row = mysqli_fetch_array($result))
 								}
 								
 								if(distance_admin==null || distance_admin==""){
-									var distance_admin_part = "<td><input type='text' onchange='handleDistanceChange(\"" + uniqueid_iddistance + "\")' id='" + uniqueid_iddistance + "' name='" + uniqueid_iddistance + "' disabled required /></td>";
+									var distance_admin_part = "<td><input type='number' step='any' onchange='handleDistanceChange(\"" + uniqueid_iddistance + "\")' id='" + uniqueid_iddistance + "' name='" + uniqueid_iddistance + "' disabled required /></td>";
 								}
 								else{
 									var distance_admin_part = "<td>" + distance_admin + "</td>"
@@ -808,8 +809,9 @@ while($row = mysqli_fetch_array($result))
 								else{
 									var newid_admin_part = "<td><select class='form-control' onchange='handleNewIdChange(\"" + uniqueid + "\")' id='" + uniqueid + "' name='" + uniqueid + "' disabled required><option value=''>Select Id</option>" + warehousepart + "</select></td>";
 								}
+								var action_btn = "<td><button class='btn btn-warning' onclick='resetRow(\"" + uniqueid + "\")'>Reset</button></td>";
 								if(approve_district==""){
-									subpart1 = subpart1 + "<td>" + newid_district + "</td><td>" + reason_district + "</td><td>" + distance_district  + approve_district_part + "</td><td></td><td></td><td></td><td></td></tr>";
+									subpart1 = subpart1 + "<td>" + newid_district + "</td><td>" + reason_district + "</td><td>" + distance_district  + approve_district_part + "</td><td></td><td></td><td></td><td></td>" + action_btn + "</tr>";
 								}
 								else{
 									if(approve_admin=="yes"){
@@ -822,7 +824,7 @@ while($row = mysqli_fetch_array($result))
 										var approve_admin_part = "<td><select class='form-control' onchange='enableDisable(\"" + uniqueid + "\")' id='" + uniqueid_bool + "' name='" + uniqueid_bool + "' required><option value=''>Select</option><option value='yes'>Approve District</option><option value='same'>Keep System Generated</option><option value='no'>Change ID</option></select></td>";
 										uniqueid_array.push(uniqueid_bool);
 									}
-									subpart1 = subpart1 + "<td>" + newid_district + "</td><td>" + reason_district + "</td><td>" + distance_district + approve_district_part + approve_admin_part + admin_reason + newid_admin_part + distance_admin_part + "</tr>";
+									subpart1 = subpart1 + "<td>" + newid_district + "</td><td>" + reason_district + "</td><td>" + distance_district + approve_district_part + approve_admin_part + admin_reason + newid_admin_part + distance_admin_part + action_btn + "</tr>";
 								}
 								$('#table_body').append(subpart1);
 							}
@@ -1049,6 +1051,27 @@ while($row = mysqli_fetch_array($result))
 			}
 		});
 		
+		function resetRow(uniqueid) {
+			if(confirm("Are you sure you want to reset this row's tagging?")) {
+				$.ajax({
+					type: "POST",
+					url: "api/ResetRowAdmin.php",
+					data: { uniqueid: uniqueid },
+					success: function(result) {
+						var res = JSON.parse(result);
+						if(res.status == 'success') {
+							alert("Row reset successfully");
+							fetchDataFromServer();
+						} else {
+							alert("Error: " + res.message);
+						}
+					},
+					error: function() {
+						alert("Error resetting row.");
+					}
+				});
+			}
+		}
 		
     </script>
     </body>
