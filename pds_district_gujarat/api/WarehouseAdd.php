@@ -72,17 +72,15 @@ if (
     echo "Error: Check Warehouse ID value (only letters and numbers allowed, no spaces or special characters)";
     exit();
 }
-if (!is_numeric($column[$latitude]) || $column[$latitude] >= 40) {
-	echo "Error : Latitude must be less than 40. Given: " . $column[$latitude];
-	echo "</br>";
-	$redirect = 0;
+if (!is_numeric($_POST["latitude"]) || $_POST["latitude"] >= 40) {
+	echo "Error : Latitude must be less than 40. Given: " . $_POST["latitude"];
+	exit();
 }
 
 // Longitude check (must be more than 65)
-if (!is_numeric($column[$longitude]) || $column[$longitude] <= 65) {
-	echo "Error : Longitude must be more than 65. Given: " . $column[$longitude];
-	echo "</br>";
-	$redirect = 0;
+if (!is_numeric($_POST["longitude"]) || $_POST["longitude"] <= 65) {
+	echo "Error : Longitude must be more than 65. Given: " . $_POST["longitude"];
+	exit();
 }
 
 $query = "SELECT * FROM login WHERE username='".$person->getUsername()."'";

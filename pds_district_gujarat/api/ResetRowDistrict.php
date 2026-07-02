@@ -26,7 +26,7 @@ if($id != "") {
     $tablename = "optimiseddata_".$id;
     $updateQuery = "UPDATE `$tablename` SET approve_district=NULL, new_id_district=NULL, new_name_district=NULL, reason_district=NULL, new_distance_district=NULL WHERE from_id='$fromid' AND to_id='$toid' AND commodity='$commodity'";
     mysqli_query($con, $updateQuery);
-    writeLog("User -> Reset District Data -> " . $_SESSION['user'] . " | " . $fromid . " - " . $toid . " - " . $commodity);
+    writeLog("User -> Reset District Data -> " . $_SESSION['district_user'] . " | " . $fromid . " - " . $toid . " - " . $commodity);
     echo json_encode(["status" => "success", "message" => "Row reset successfully"]);
 } else {
     echo json_encode(["status" => "error", "message" => "No optimised data found"]);
